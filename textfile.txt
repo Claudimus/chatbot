@@ -1,0 +1,24 @@
+Here are the basic instructions for how to I am making a chatbot. 
+
+<HTML>...................................................................................................
+
+
+
+
+
+
+
+
+
+
+
+
+<JS>......................................................................................................
+Here is are the instructions for the javascript. 
+
+1.  Make references to the chat and the user input fields from the html files by using the 'getElementByID'method and assigning them to constant variables. 
+
+2.  Add a click event listener to the 'Send' button. When the button is clicked the 'sendMessage function is called. 
+
+3. Create a function called sendMessage. This function takes what the user typed, shows it in the chat, generates a simple bot response, shows that in the chat, and then clears the input field for the next message. 
+

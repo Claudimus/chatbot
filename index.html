@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatbot Project</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+
+
+    <div id="container" class="container">
+      <h1 class="text-center">Claude Chatbot</h1>
+
+      <div class="media">
+        <img
+          src="images\Claude8bit.png"
+          class="rounded-circle float-left img-thumbnail"
+          alt="Picture Here"
+          width="75px"
+          style="margin-left"
+        />
+        <div class="media-body">
+          <h5 style="margin">ClaudeBot</h5>
+          <span style="margin-left">Online</span>
+        </div>
+      </div>
+
+      <!--Messages container-->
+      <div
+        id="chat-container";
+        class="container border overflow-auto";
+        style="height: 500px";
+      >
+
+
+        <!--Chatbot message design-->
+        <div 
+          id="chatbot-input"
+          class="d-flex justify-content-start align-items-center w-50 shadow-sm";
+          style="margin: 10px; padding: 5px";
+        >
+        <div style="margin-top: 10px; padding: 10px;" >
+          <span>Chat: </span>
+          <span>How are you?</span>
+          </div>
+
+        </div>
+
+
+
+        <!--User message design-->
+        <div
+        id="user-input"
+          class="d-flex justify-content-end w-50  shadow-sm"
+          style="margin: 10px; padding: 5px";
+        >
+        <div style="margin-top: 10px; padding: 10px; ">
+          <span>You: </span>
+          <span>Great !</span>
+        </div>
+
+
+        </div>
+
+
+      </div>
+
+<!--Chat input box and button  -->
+      
+      <div id="chat" class="input-group">
+      <input type="text" id="user-input-box" class="form-control" placeholder="Type your message..." />
+      <button id="send-button" type="button" class="btn btn-primary">Send</button>
+
+    </div>
+
+
+
+
+      </div>
+    </div>
+
+    
+    
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="chatbot.js"></script>
+  </body>
+</html
