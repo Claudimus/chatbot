@@ -22,3 +22,20 @@ Here is are the instructions for the javascript.
 
 3. Create a function called sendMessage. This function takes what the user typed, shows it in the chat, generates a simple bot response, shows that in the chat, and then clears the input field for the next message. 
 
+
+
+<function processMessage>
+
+The processMessage function is defined, and it seems to be designed to handle incoming user messages.
+
+The arrayOfPossibleMessages is assumed to be an array of objects, each containing a message property and a corresponding response property.
+
+The filter method is used on arrayOfPossibleMessages to create a new array (result) containing only those objects whose message property includes the user's message (ignoring case sensitivity). This is achieved by converting both the user's message (user.message) and the messages in the array to lowercase using toLowerCase().
+
+The response variable is assigned the response property of the first (presumably the only) element in the filtered result array.
+
+The setTimeout function is used to delay the execution of the subsequent code. In this case, after 1000 milliseconds (1 second), the provided function will be executed.
+
+Inside the setTimeout function, the chatbotSendMessage function is called with the response as an argument. This implies that the chatbot will send a message after a 1-second delay, presumably to simulate a more conversational interaction.
+
+Please note that for this code to work as intended, the variables arrayOfPossibleMessages, user.message, and chatbotSendMessage must be defined elsewhere in your code.
