@@ -113,6 +113,8 @@ sendBtn.addEventListener("click", function (e) {
 
 //***** val represents the things in the array. It could be named item,thing,stuff, etc.
 
+//
+
 function processMessage() {
   let result = arrayOfPossibleMessages.filter((val) =>
     val.message.includes(user.message.toLowerCase())
