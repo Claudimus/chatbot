@@ -55,6 +55,7 @@ setTimeout(function () {
   chatbotSendMessage("Hi ! Whats your name ?");
 }, 6000);
 
+
 function chatbotSendMessage(messageText) {
   const messageElement = document.createElement("div");
   messageElement.classList.add("w-50");
