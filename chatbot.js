@@ -1,10 +1,10 @@
 // Chatbot JS file
 
-// Reference to the chat are and user input field from html. Declared and references to the DOM
+// Using getElementById method Reference to the chat are and user input field from html. Declared and references to the DOM
 
 const chatContainer = document.getElementById("chatcontainer");
 const userInput = document.getElementById("textbox");
-const sendBtn = document.getElementById("sendBtn");
+const sendButton = document.getElementById("sendBtn");
 
 let user = { message: "" };
 
@@ -16,8 +16,10 @@ const arrayOfPossibleMessages = [
   { message: "what are you doing?", response: "not much. u ?" },
   { message: "whats new?", response: "nothin. u ?" },
   { message: "yo!", response: "sup?" },
+  { message: "yo", response: "sup?" },
   { message: "whats good ?", response: "i cant call it. " },
   { message: "whats up ?", response: "chillin " },
+  { message: "whats up?", response: "chillin " },
   { message: "whats up ", response: "chillin " },
   { message: "what up ", response: "chillin " },
   { message: "what up? ", response: "chillin " },
@@ -48,7 +50,6 @@ setTimeout(function () {
 //  Set the innerHTML of the messageElement using TEMPLATE LITERAL (IS THERE A BETTER WAT TO WRITE THIS ?)
 //  use the animate() method to create a simple fade-in effect for the messageElement
 //  Get reference to HTML element w/ id "chatContainer" and append messageElement to it (append to DOM)
-
 // THIS IS WHAT THE BOT SAYS
 
 function chatbotSendMessage(messageText) {
@@ -90,21 +91,40 @@ function sendMessage(messageText) {
 // THIS IS HOW THE BUTTON WORKS
 //Add a click event listener. Adds an event listener to the "Send"(sendBtn) button. When the button is clicked, the "sendMessage" function is called. The 'sendMessage' in the parenthesis is called a callback function.
 //
+//
 
-sendBtn.addEventListener("click", function (e) {
-  if (textbox.value == "") {
+sendButton.addEventListener("click", function (e) {
+  if (userInput.value == "") {
     alert("Please type in a mesage.");
   } else {
     ///// HERE IS ====>>>>> messageText <<<<<========
 
-    let messageText = textbox.value; // Takes what the user entered (textbox.value) and puts it in a variable
+    let messageText = userInput.value; // Takes what the user entered (textbox.value) and puts it in a variable
     user.message = messageText; // User message is stored in the "user" OBJECT and specificaly the the "message" PROPERTY
     sendMessage(messageText); // This function creates and displays the message that the user inputs. sendMessage function is CALLED with messageText as an ARGUMENT
-    textbox.value = ""; // This clears the user's message input field
+    userInput.value = ""; // This clears the user's message input field
 
     processMessage(); // Call the processMessage function
   }
 });
+
+/*function handleInput(event) {
+  console.log("in handleInput")
+  if (userInput.value == "") {
+    alert("Please type in a mesage.");
+  } else {
+    ///// HERE IS ====>>>>> messageText <<<<<========
+
+    let messageText = userInput.value; // Takes what the user entered (textbox.value) and puts it in a variable
+    user.message = messageText; // User message is stored in the "user" OBJECT and specificaly the the "message" PROPERTY
+    sendMessage(messageText); // This function creates and displays the message that the user inputs. sendMessage function is CALLED with messageText as an ARGUMENT
+    userInput.value = ""; // This clears the user's message input field
+
+    processMessage(); // Call the processMessage function
+  }
+};
+*/
+//sendButton.addEventListener("click", handleInput)
 
 // Define a function named processMessage
 // Filter arrayOfPossibleMessages based on whether each element's message includes the user's message in a case-insensitive manner
@@ -119,16 +139,31 @@ sendBtn.addEventListener("click", function (e) {
 // Val represents things in the array. Checks lowercase version of user messages in the array.
 // Result is the NEW array that contains everything that was filtered out of arrayOfPossibleMessages.
 
+if(user.message.length > 5 )
+
 function processMessage() {
   let result = arrayOfPossibleMessages.filter((val) =>
     val.message.includes(user.message.toLowerCase())
   );
 
   // Retreves the RESPONSE property for the matching MESSAGE. If it matches the chatbot will respond
-  let response = result[0].response;
+  if(result.length>0){
+              let response = result[0].response;
+  
 
   //Sets a timeout to send the chatbot's response after 1 second
   setTimeout(function () {
     chatbotSendMessage(response);
-  }, 1000);
-}
+  }, 1500);
+
+}else{
+
+
+} else if (user.message == "how" || user.message == "who"){
+
+}setTimeout(function () {
+  chatbotSendMessage("I dont understand !");
+}, 1500);
+
+
+} 
